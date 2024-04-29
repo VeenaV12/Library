@@ -1,6 +1,6 @@
 function validateForm(){
 
-
+    // store the return value after execution of each function 
     const fn = validateFirstName();
     const ln = validateLastName();
     const em = validateEmail();
@@ -8,6 +8,7 @@ function validateForm(){
     const pw = checkPasswordStrength();
  
 
+    // clear the error msg on correct input
     if(fn){
         document.querySelector('#errorfname').innerHTML = "";
     }
@@ -26,7 +27,7 @@ function validateForm(){
     }
     
 
-
+    // submit the form only after validating each field
     if(ph && pw && em && fn && ln){
         document.querySelector('#firstname').value = "";
         document.querySelector('#lastname').value = "";
@@ -115,4 +116,16 @@ var pwregex =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     }
 
 
+}
+
+// reset form on cance button
+function clearForm(){
+
+        document.querySelector('#errorfname').innerHTML = "";
+        document.querySelector('#errorlname').innerHTML = "";
+        document.querySelector('#errormail').innerHTML = "";
+        document.querySelector('#errorph').innerHTML = "";
+        document.querySelector('#errorpw').innerHTML = "";
+        document.querySelector('#password').style.border ="";
+    
 }
