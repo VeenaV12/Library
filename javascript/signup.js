@@ -22,7 +22,7 @@ function validateForm(){
         document.querySelector('#errorph').innerHTML = "";
     }
     if(pw){
-        document.querySelector('#errorpw').value = "";
+        document.querySelector('#errorpw').innerHTML = "";
         document.querySelector('#password').style.border ="";
     }
     
@@ -34,6 +34,7 @@ function validateForm(){
         document.querySelector('#email').value = "";
         document.querySelector('#phonenumber').value = "";
         document.querySelector('#password').value = "";
+
         alert("Your submission was successful!")
     }
 
@@ -99,18 +100,26 @@ var pwregex =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
         if (password.length >= 12){
                 
             document.querySelector('#password').style.border = '2px solid green';
-            document.querySelector('#errorpw').innerHTML = "";
+            document.querySelector('#errorpw').style.color = 'green';
+            document.querySelector('#errorpw').innerHTML = "Strong";
             return true;
         }
-        else if(password.length >= 8 && password.length < 12){
+        else if(password.length > 8 && password.length < 12){
                 //document.querySelector('#errorpw').innerHTML = 'Hello';
             document.querySelector('#password').style.border = '2px solid orange';
-            document.querySelector('#errorpw').innerHTML = "";
+            document.querySelector('#errorpw').style.color = 'orange';
+            document.querySelector('#errorpw').innerHTML = "Medium";
             return true;
+            }
+        else{
+                document.querySelector('#password').style.border = '2px solid red';
+                document.querySelector('#errorpw').style.color = 'red';
+                document.querySelector('#errorpw').innerHTML = "Poor";
+                return true;
             }
         }
     else{
-        document.querySelector('#password').style.border = '2px solid red'; 
+        //document.querySelector('#password').style.border = '2px solid red'; 
         document.querySelector('#errorpw').innerHTML = 'Your password must contain minimum 8 characters,at least one uppercase, one lower case, and one number.';
         return false;
     }
