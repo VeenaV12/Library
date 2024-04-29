@@ -111,7 +111,7 @@ var pwregex =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
         }
     else{
         document.querySelector('#password').style.border = '2px solid red'; 
-        document.querySelector('#errorpw').innerHTML = 'Your password must contain minimum 8 characters,at least one uppercase, one lower case, and one number';
+        document.querySelector('#errorpw').innerHTML = 'Your password must contain minimum 8 characters,at least one uppercase, one lower case, and one number.';
         return false;
     }
 
