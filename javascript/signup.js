@@ -85,7 +85,6 @@ function validatePhoneNumber(){
         document.querySelector('#errorph').innerHTML = "Enter a valid phone number!";
         return false;
     }
-    document.querySelector('#errormail').innerHTML = "";
     return true;
 }
 
@@ -98,7 +97,7 @@ var password = document.querySelector('#password').value;
 var pwregex =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if(pwregex.test(password)){
             
-        if (password.length >= 12){
+        if (password.length > 13){
                 
             document.querySelector('#password').style.border = '2px solid green';
             document.querySelector('#errorpw').style.color = 'green';
@@ -128,7 +127,7 @@ var pwregex =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
 }
 
-// reset form on cance button
+// reset form on cancel button
 function clearForm(){
 
         document.querySelector('#errorfname').innerHTML = "";
