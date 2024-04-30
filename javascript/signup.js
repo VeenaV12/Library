@@ -34,6 +34,7 @@ function validateForm(){
         document.querySelector('#email').value = "";
         document.querySelector('#phonenumber').value = "";
         document.querySelector('#password').value = "";
+        document.querySelector('#errorpw').style.color = '';
 
         alert("Your submission was successful!")
     }
@@ -104,7 +105,7 @@ var pwregex =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
             document.querySelector('#errorpw').innerHTML = "Strong";
             return true;
         }
-        else if(password.length > 8 && password.length < 12){
+        else if(password.length > 10 && password.length < 13){
                 //document.querySelector('#errorpw').innerHTML = 'Hello';
             document.querySelector('#password').style.border = '2px solid orange';
             document.querySelector('#errorpw').style.color = 'orange';
